@@ -1,0 +1,17 @@
+<template name="postItem">
+    <view class="post-container">
+        <view class="post-author-date">
+            <img src="/images/avatar/2.png" alt="用户头像" class="post-author">
+            <text class="post-date">Sep 18 2016</text>
+        </view>
+        <text class="post-title">正是虾肥蟹壮时</text>
+        <img src="/images/post/crab.png" alt="" class="post-image">
+        <text class="post-content">假装这里有内容</text>
+        <view class="post-preview">
+            <img src="/images/icon/view.png" alt="" class="post-preview-image">
+            <text class="post-preview-text">10000+</text>
+            <img src="/images/icon/chat.png" alt="" class="post-preview-image">
+            <text class="post-preview-text">9999</text>
+        </view>
+    </view>
+</template>
