@@ -21,20 +21,21 @@ Page({
   /**
    * 点击swiper中的图片跳转到文章详情页
    */
-  onSwiperTap: function(e){
+  onSwiperTap: function (e) {
     //target 和currentTarget的区别
     //target指的是当前点击的组件,而currentTarget 指的是捕获事件的组件
     //target这里指的是image，而currentTarget指的是swiper
     var postId = e.target.dataset.postid
+    console.log(postId)
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + postId,
-      success: function(res){
+      success: function (res) {
         // success
       },
-      fail: function() {
+      fail: function () {
         // fail
       },
-      complete: function() {
+      complete: function () {
         // complete
       }
     })
@@ -42,68 +43,68 @@ Page({
   /**
    * 点击文章预览跳转到文章详情页
    */
-  onPostTap: function(e){
+  onPostTap: function (e) {
     var postId = e.currentTarget.dataset.postid
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + postId,
-      success: function(res){
+      success: function (res) {
         // success
       },
-      fail: function() {
+      fail: function () {
         // fail
       },
-      complete: function() {
+      complete: function () {
         // complete
       }
     })
   },
-  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   }
 })

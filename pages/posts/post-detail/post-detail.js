@@ -10,7 +10,7 @@ Page({
         //options会携带页面跳转时路径中所带的参数
         var postId = options.id
         this.data.currentPostId = postId
-        var postData = postData.postList[postId]
+        var postData = postsData.postList[postId]
         this.setData({
             postData: postData
         })
@@ -23,7 +23,7 @@ Page({
         } else {
             var postsCollected = {}
             postsCollected[postId] = false
-            wx.setStorageSync(postsCollected)
+            wx.setStorageSync('posts_collected',postsCollected)
         }
         if (app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId === postId) {
             this.setData({
@@ -197,27 +197,21 @@ Page({
     },
     onReady: function () {
         // 生命周期函数--监听页面初次渲染完成
-        String3
     },
     onShow: function () {
         // 生命周期函数--监听页面显示
-        String4
     },
     onHide: function () {
         // 生命周期函数--监听页面隐藏
-        String5
     },
     onUnload: function () {
         // 生命周期函数--监听页面卸载
-        String6
     },
     onPullDownRefresh: function () {
         // 页面相关事件处理函数--监听用户下拉动作
-        String7
     },
     onReachBottom: function () {
         // 页面上拉触底事件的处理函数
-        String8
     },
     onShareAppMessage: function () {
         // 用户点击右上角分享
