@@ -1,7 +1,7 @@
 <view class="container">
     <image src="/images/avatar/1.png" alt="用户头像" class="avatar"></image>
     <!-- text可以嵌套使用 -->
-    <text class="motto"><text style='color:red'>Hello</text> , 小程序</text>
+    <!-- <text class="motto"><text style='color:red'>Hello</text> , 小程序</text> -->
     <view class="journey-container" bindtap="onTap">
         <text class="journey">开启小程序</text>
     </view>
