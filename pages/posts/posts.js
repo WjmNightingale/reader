@@ -25,7 +25,7 @@ Page({
     //target 和currentTarget的区别
     //target指的是当前点击的组件,而currentTarget 指的是捕获事件的组件
     //target这里指的是image，而currentTarget指的是swiper
-    var postId = e.target.dataset.postid;
+    var postId = e.target.dataset.postid
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + postId,
       success: function(res){
@@ -43,7 +43,7 @@ Page({
    * 点击文章预览跳转到文章详情页
    */
   onPostTap: function(e){
-    var postId = e.currentTarget.dataset.postid;
+    var postId = e.currentTarget.dataset.postid
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + postId,
       success: function(res){
