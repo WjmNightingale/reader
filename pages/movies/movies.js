@@ -63,6 +63,36 @@ Page({
         }
         this.setData(readyData)
     },
+    onMoreTap: function (e) {
+        var category = e.currentTarget.dataset.category
+        wx.navigateTo({
+            url: 'more-movie/more-movie?category=' + category
+        })
+    },
+    onMovieTap: function (e) {
+        var movieId = event.currentTarget.dataset.movieid
+        wx.navigateTo({
+            url: 'movie-detail/movie-detail?id=' + movieId
+        })
+    },
+    onCancelImgTap: function (e) {
+        this.setData({
+            containerShow: true,
+            searchPanelShow: false,
+            searchResult: {}
+        })
+    },
+    onBindFocus: function (e) {
+        this.setData({
+            containerShow: false,
+            searchPanelShow: true
+        })
+    },
+    onBindBlur: function (e) {
+        var text = e.detail.value
+        var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text
+        this.getMovieListData(searchUrl,'searchResult','')
+    },
     onReady: function () {
         // 生命周期函数--监听页面初次渲染完成
 
