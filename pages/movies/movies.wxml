@@ -1,0 +1,32 @@
+<!-- 引入模版 -->
+<import src="movie-list/movie-list-tpl.wxml" />
+<import src="movie-grid/movie-grid-tpl.wxml" />
+
+<!-- 搜索栏 -->
+<view class="search">
+    <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+    <input type="text" placeholder="血战钢锯岭、你的名字" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"
+    />
+    <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
+</view>
+
+<!-- 电影预览区域 -->
+<view class="container" wx:if="{{containerShow}}">
+    <!-- 最近热映 -->
+    <view class="movies-template">
+        <template is="movieListTemplate" data="{{...inTheaters}}" />
+    </view>
+    <!-- 即将上映 -->
+    <view class="movies-template">
+        <template is="movieListTemplate" data="{{...comingSoon}}" />
+    </view>
+    <!-- top250 -->
+    <view class="movies-template">
+        <template is="movieListTemplate" data="{{...top250}}" />
+    </view>
+</view>
+
+<!-- 搜索栏激活后搜索显示区域 -->
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+    <template is="movieGridTemplate" data="{{...searchResult}}" />
+</view>
