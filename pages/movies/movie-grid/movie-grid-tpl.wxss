@@ -1,4 +1,4 @@
-@import "../movie/movie-template.wxss";
+@import "../movie/movie-tpl.wxss";
 
 /*scroll-view*/
 .single-view-container{

@@ -70,7 +70,7 @@ Page({
         })
     },
     onMovieTap: function (e) {
-        var movieId = event.currentTarget.dataset.movieid
+        var movieId = e.currentTarget.dataset.movieid
         wx.navigateTo({
             url: 'movie-detail/movie-detail?id=' + movieId
         })

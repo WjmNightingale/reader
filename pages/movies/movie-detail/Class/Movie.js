@@ -5,9 +5,12 @@ class Movie {
     }
     getMovieData(cb) {
         this.cb = cb
-        util.http(this.url,this.getMovieData.bind(this))
+        //util.http(url,callback)
+        util.http(this.url, this.processDoubanData.bind(this))
     }
     processDoubanData(data) {
+        console.log('开始执行processDoubanData')
+        console.log(data)
         if (!data) {
             return
         }
@@ -16,12 +19,12 @@ class Movie {
             name: '',
             id: ''
         }
-        if (data.director[0] !== null) {
-            if (data.director[0].avatars !== null) {
-                director.avatar = data.director[0].avatars.large
+        if (data.directors[0] !== null) {
+            if (data.directors[0].avatars !== null) {
+                director.avatar = data.directors[0].avatars.large
             }
-            director.name = data.director[0].name
-            director.id = data.director[0].id
+            director.name = data.directors[0].name
+            director.id = data.directors[0].id
         }
         var movie = {
             movieImg: data.images ? data.images.large : "",
@@ -39,8 +42,15 @@ class Movie {
             castsInfo: util.convertToCastInfos(data.casts),
             summary: data.summary
         }
+        // cb = function (movie) {
+        //     this.setData({
+        //         movie: movie
+        //     })
+        // }
         this.cb(movie)
     }
 }
 
-export {Movie}
+export {
+    Movie
+}

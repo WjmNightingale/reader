@@ -6,7 +6,6 @@
 .head-image {
     width: 100%;
     height: 460rpx;
-    top: 100px;
 }
 
 .hide {
