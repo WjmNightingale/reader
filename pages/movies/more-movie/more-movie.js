@@ -113,9 +113,9 @@ Page({
     onShareAppMessage: function () {
         // 用户点击右上角分享
         return {
-            title: 'title', // 分享标题
-            desc: 'desc', // 分享描述
-            path: 'path' // 分享路径
+            title: '探索', // 分享标题
+            desc: '来分享更多的电影吧', // 分享描述
+            path: 'pages/more-movie/more-movie' // 分享路径
         }
     }
 })
