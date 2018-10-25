@@ -1,4 +1,4 @@
 {
     "navigationBarTitleText": "电影详情",
-    "enablePullDownRefresh": "true"
+    "enablePullDownRefresh": true
 }
